@@ -1,0 +1,50 @@
+select * from employee7
+inner join
+dept
+on employee7.deptid=dept.id;
+
+select * from employee7
+left outer join
+dept
+on employee7.deptid=dept.id;
+
+select * from employee7
+right outer join
+dept
+on employee7.deptid=dept.id;
+
+select * from employee7
+full outer join
+dept
+on employee7.deptid=dept.id;
+
+select e.id,e.name,e.salary,d.id,d.name,d.manager
+from employee7 e
+inner join
+dept d
+on e.deptid=d.id;
+
+select e.id,e.name,e.salary,d.id,d.name,d.manager
+from employee7 e
+left outer join
+dept d
+on e.deptid=d.id;
+
+select e.id,e.name,e.salary,d.id,d.name,d.manager
+from employee7 e
+right outer join
+dept d
+on e.deptid=d.id;
+
+select e.id,e.name,e.salary,d.id,d.name,d.manager
+from employee7 e
+full outer join
+dept d
+on e.deptid=d.id;
+
+select * from employee7
+cross join
+dept
+
+
+

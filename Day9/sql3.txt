@@ -1,0 +1,25 @@
+create table dept
+(
+id number(10) primary key,
+name varchar2(30),
+manager varchar2(30)
+);
+
+insert into dept values(2,'developer','ramesh');
+select * from dept;
+
+create table employee7
+(
+id number(10) primary key,
+name varchar2(30),
+age number(10),
+salary number(10),
+deptid number(10),
+constraint fk2 foreign key(deptid) references dept(id)
+);
+
+insert into employee7 values(101,'suraj',32,40000,2);
+
+select * from employee7;
+
+

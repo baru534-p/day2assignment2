@@ -1,0 +1,140 @@
+create table employee
+(
+id number(10),
+name varchar2(30),
+salary number(10,2),
+age number(10)
+);
+
+desc employee;
+
+insert into employee values(12,'latha',30000,26);
+insert into employee values(7,'vb',30000,26);
+
+insert into employee values(5,'latha',60000,24,'hr');
+
+insert into employee values(6,'padma',90000,26,'hr');
+
+
+select * from employee;
+select id from employee;
+select id,name,age from employee;
+
+insert into employee(id,name) values(2,'priya');
+
+update employee set salary=60000 where id=2;
+update employee set age=27 where id=4;
+
+rename employee to emp3;
+rename emp3 to employee;
+select * from emp3;
+desc emp3;
+delete from employee where id=12;
+
+
+alter table employee drop column dept;
+
+alter table employee rename column salary to sal;
+select * from employee;
+
+alter table employee modify name varchar2(50);
+desc employee;
+select * from employee;
+
+select id,name,sal,sal+1000 as bonus from employee;
+update employee set age=28 where id=2;
+update employee set name='pushpa' where id=2;
+update employee set name='priya' where id=4;
+
+alter table employee add dept varchar2(30);
+
+update employee set dept='developer' where id=2;
+
+update employee set sal=90000  where id=4;
+
+update employee set dept='developer' where id=4;
+insert into employee values(3,'aruna',70000, 45,'hr'); 
+
+select * from employee where dept='developer';
+
+select * from employee where dept='hr';
+
+select * from employee order by age;
+
+select sum(sal) from employee;
+select min(sal) from employee;
+select max(sal) from employee;
+select avg(sal) from employee;
+select count(sal) from employee;
+
+select min(age) from employee;
+
+select * from employee
+where dept='hr'
+order by age desc;
+
+select dept from employee group by dept;
+
+select dept,count(id), sum(sal), min(sal), max(sal)
+from employee
+group by dept
+having count(id)>=2;
+
+update employee set dept='Tester'  where id=1;
+update employee set dept='Tester'  where id=7;
+
+select dept,count(id), sum(sal), min(sal), max(sal)
+from employee
+group by dept
+having min(sal)>20000
+order by min(sal);
+
+select dept,sum(sal)
+from employee
+group by dept
+having count(id)>2
+order by sum(sal) desc;
+
+select dept, count(id) 
+from employee
+group by dept
+order by count(id);
+
+select dept,sum(sal)
+from employee
+group by dept
+order by sum(sal);
+
+select dept,sum(sal)
+from employee
+where dept <>'Tester'
+group by dept
+having sum(sal) > 100000
+order by sum(sal);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
